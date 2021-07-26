@@ -1,4 +1,7 @@
 # DesafioConexaFront
+**## Authentication**
+É aqui que ocorrerá a autenticação do paciente. (Login teste : username = gui password = 123)
+![image](https://user-images.githubusercontent.com/69088421/126932080-58e76d3d-f773-42aa-abec-96574711d7fd.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
 
