@@ -15,6 +15,15 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {RouteReuseStrategy} from "@angular/router";
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptor} from "./shared/interceptor/auth.interceptor";
+import {FullCalendarModule} from "@fullcalendar/angular";
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ToastrModule } from "ngx-toastr";
+import {HttpErrorInterceptor} from "./shared/interceptor/http-error-interceptor.service";
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin
+]);
 
 @NgModule({
   declarations: [
@@ -32,10 +41,23 @@ import {AuthInterceptor} from "./shared/interceptor/auth.interceptor";
     ModalModule.forRoot(),
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FullCalendarModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
+
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
   ],
   bootstrap: [AppComponent]
 })

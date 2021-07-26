@@ -4,7 +4,8 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 import {map} from "rxjs/operators";
 import {Router} from "@angular/router";
-import {User, UserAuthResponse} from "../dto/user";
+import {PacienteRegisterRequest} from "../dto/paciente-register-request";
+import {UserAuthResponse} from "../dto/user-auth-response";
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +37,7 @@ export class AuthenticationService {
       }));
   }
 
-  register(user: User) {
+  register(user: PacienteRegisterRequest) {
     return this.http.post<UserAuthResponse>(`${environment.backendURL}/auth/cadastrar`, user)
       .pipe(map(userResult => {
         localStorage.setItem('currentUser', JSON.stringify(userResult));
@@ -48,5 +49,6 @@ export class AuthenticationService {
 
   logout() {
     localStorage.removeItem('currentUser');
+    this.router.navigate(['login']);
   }
 }

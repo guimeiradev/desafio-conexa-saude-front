@@ -1,4 +1,4 @@
-export class User {
+export class PacienteRegisterRequest {
   fullName: string;
   cpf: string;
   convenioId: string;
@@ -14,6 +14,3 @@ export class User {
   }
 }
 
-export class UserAuthResponse {
-  token?: String;
-}

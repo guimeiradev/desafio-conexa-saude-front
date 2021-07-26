@@ -1,1 +1,48 @@
-<p>register-professional works!</p>
+<div class="h-100 d-flex justify-content-center row bg-light">
+  <div class="position-absolute float-end">
+    <button routerLink="/login" class="btn btn-success fw-bold mt-3">Voltar</button>
+  </div>
+
+  <div class="col-6">
+    <div class="row">
+      <form [formGroup]="form">
+        <div class="form-group mt-5">
+          <label for="fullName">Nome do Médico</label>
+          <input formControlName="fullName" type="text" class="form-control" id="fullName" aria-describedby="fullName"
+                 placeholder="Nome Completo">
+        </div>
+        <div class="form-group">
+          <label for="crm">CRM</label>
+          <input formControlName="crm" type="text" class="form-control" id="crm" aria-describedby="crm"
+                 placeholder="CRM">
+        </div>
+        <div class="form-group">
+          <label for="crm">Convênio ID</label>
+          <input formControlName="conveniosIds" type="number" class="form-control" id="conveniosIds" aria-describedby="conveniosIds"
+                 placeholder="Convênio ID">
+        </div>
+        <div class="float-end">
+          <button type="button" class="btn btn-primary mx-3 mb-3" (click)="submitRegisterProfessional()">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <table class="table table-card">
+        <thead class="thead-dark">
+        <tr>
+          <th style="width: 10%" scope="col">ID</th>
+          <th style="width: 40%" scope="col">CRM</th>
+          <th style="width: 50%" scope="col">Nome</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let professional of professionals">
+          <th>{{professional.id}}</th>
+          <th>{{professional.crm}}</th>
+          <th>{{professional.fullName}}</th>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,60 @@
-<p>list-appointment works!</p>
+<div class="justify-content-center row bg-light">
+  <div class="col-6 mt-5">
+
+    <div class="row">
+      <div class="col-9">
+        <h2>Olá <i class="link-info">{{user.fullName}}</i> abaixo estão suas consultas agendadas </h2>
+        <h4 *ngIf="appointments.length > 1">Você possui um total de {{appointments.length}} consultas
+          agendadas. </h4>
+        <h4 *ngIf="appointments.length == 1">Você possui um total de {{appointments.length}} consulta
+          agendada. </h4>
+        <h4 *ngIf="appointments.length <= 0">Você não possui consultas agendadas.</h4>
+      </div>
+      <div class="col-2">
+        <button (click)="exit()" class="btn btn-primary">Sair</button>
+      </div>
+      <div class="col-2">
+        <button data-toggle="modal" data-target="#modal" class="btn btn-success">Agendar nova consulta</button>
+      </div>
+    </div>
+
+    <full-calendar
+      class="mt-5"
+      [options]='calendarOptions'
+    ></full-calendar>
+  </div>
+</div>
+
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Agendar nova consulta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form">
+          <div class="form-group">
+            <label for="scheduleDateTime">Data da consulta</label>
+            <input formControlName="scheduleDateTime" type="datetime-local" class="form-control" id="scheduleDateTime" aria-describedby="scheduleDateTime"
+                   placeholder="Data e Hora">
+          </div>
+          <div class="form-group">
+            <h3 *ngIf="profissionalsAvailable.length <= 0">Não existem profissionais para esse convênio.</h3>
+            <select formControlName="profissionalId" *ngIf="profissionalsAvailable.length > 0" class="form-select" aria-label="Profissional">
+              <option [value]="profissional.id"
+                      *ngFor="let profissional of profissionalsAvailable">{{profissional.fullName}}</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary" (click)="submitAppointment()">Agendar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
