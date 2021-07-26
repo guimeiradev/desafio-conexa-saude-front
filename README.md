@@ -22,7 +22,7 @@
 
 ### 4- Agendamento de consulta
 
-- Aqui é você poderá agendar suas consultas com os profissionais que estiverem cadastrados.
+- Aqui você poderá agendar suas consultas com os profissionais que estiverem cadastrados.
 
 ![image](https://user-images.githubusercontent.com/69088421/126933328-5357f0ea-f8be-4b6e-910c-f2bf57559bd4.png)
 
