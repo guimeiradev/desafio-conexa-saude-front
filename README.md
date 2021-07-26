@@ -22,13 +22,13 @@
 
 ### 4- Agendamento de consulta
 
-- Aqui você pode agenda um consulta com o profissional que estiver cadastro.
+- Aqui é você poderá agendar suas consultas com os profissionais que estiverem cadastrados.
 
 ![image](https://user-images.githubusercontent.com/69088421/126933328-5357f0ea-f8be-4b6e-910c-f2bf57559bd4.png)
 
 ### 5- Agenda com suas respectivas consultas marcadas
 
-- Aqui voê poderá ver no calendário todas suas consultas marcadas.
+- Aqui você poderá ver no calendário todas suas consultas marcadas.
 
 ![image](https://user-images.githubusercontent.com/69088421/126933742-c446b51f-fc99-4add-a8c6-7c21f276ee12.png)
 
