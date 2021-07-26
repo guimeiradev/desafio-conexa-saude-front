@@ -1,8 +1,7 @@
 # DesafioConexaFront
-## Autenticação
-<br/>
+### 1- Autenticação
 
-## É aqui que ocorrerá a autenticação do paciente. (Login teste : username = gui password = 123)
+- É aqui que ocorrerá a autenticação do paciente. (Login teste : username = gui password = 123)
 
 ![image](https://user-images.githubusercontent.com/69088421/126932080-58e76d3d-f773-42aa-abec-96574711d7fd.png)
 
