@@ -36,6 +36,13 @@
 
 ![image](https://user-images.githubusercontent.com/69088421/126933742-c446b51f-fc99-4add-a8c6-7c21f276ee12.png)
 
+### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Angular](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
 
